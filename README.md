@@ -1,0 +1,2 @@
+## General Idea
+I read about how some developers use AST diagrams to see how to make their code more efficient, remove redundant or bloated definitions and allocate objects better. I felt a natural extension to this idea could be about memory distribution i.e. how are your objects actually manifesting themselves in the memory, which is what this repository is really all about.
