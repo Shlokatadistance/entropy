@@ -1,2 +1,4 @@
 ## General Idea
 I read about how some developers use AST diagrams to see how to make their code more efficient, remove redundant or bloated definitions and allocate objects better. I felt a natural extension to this idea could be about memory distribution i.e. how are your objects actually manifesting themselves in the memory, which is what this repository is really all about.
+
+While the scripts in this repo are mostly standalone, I think I can come up with a way of them behaving somewhat like a watchdog i.e. active monitors but do not influence the program in any way. This might be too ideal of an assumption but I am curious to see what it actually leads to.
