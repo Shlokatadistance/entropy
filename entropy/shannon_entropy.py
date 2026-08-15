@@ -1,17 +1,9 @@
-from dataclasses import dataclass
 import gc
-from sys import getsizeof
-from collections import Counter, defaultdict
 import math
+from collections import Counter, defaultdict
+from sys import getsizeof
 
-
-@dataclass
-class EntropyStats:
-    Entropy: float
-    EntropyNormalized: float
-    TotalObjectCount: int
-    TotalObjectTypes: int
-    TopCommonObjects: list[tuple[str,int]]
+from utils.models import EntropyStats
 
 
 class ShannonEntropy:
@@ -43,14 +35,9 @@ class ShannonEntropy:
 
         self.stats = EntropyStats(
             Entropy=H,
-            EntropyNormalized=H/H_max if H_max else 0,
+            EntropyNormalized=H / H_max if H_max else 0,
             TotalObjectCount=sum(self.net_counts.values()),
             TotalObjectTypes=len(self.net_counts.keys()),
             TopCommonObjects=self.net_counts.most_common(10),
         )
         return self
-
-if __name__ == "__main__":
-    x = ShannonEntropy()
-    x.gather_objects().calculate_shannon_entropy()
-    print(x.stats.__dict__)
